@@ -100,7 +100,7 @@ async def vplay(client, m: Message):
                 await loser.delete()
                 await m.reply_photo(
                     photo=f"{IMG_1}",
-                    caption=f"💡 **Track added to the queue**\n\n🏷 **Name:** [{songname}]({link})\n💭 **Chat:** `{chat_id}`\n🎧 **Request by:** {m.from_user.mention()}\n🔢 **At position »** `{pos}`",
+                    caption=f"💡 **Đã được thêm vào hàng chờ**\n\n🏷 **Tên bài:** [{songname}]({link})\n💭 **Nhóm chat:** `{chat_id}`\n🎧 **Bật bởi người đáng iu tên:** {m.from_user.mention()}\n🔢 **Vị trí »** `{pos}`",
                     reply_markup=keyboard,
                 )
             else:
@@ -128,13 +128,13 @@ async def vplay(client, m: Message):
                     "» reply to an **video file** or **give something to search.**"
                 )
             else:
-                loser = await m.reply("🔎 **searching...**")
+                loser = await m.reply("🔎 **Đang tìm, chờ tí...**")
                 query = m.text.split(None, 1)[1]
                 search = ytsearch(query)
                 Q = 720
                 amaze = HighQualityVideo()
                 if search == 0:
-                    await loser.edit("❌ **no results found.**")
+                    await loser.edit("❌ **Không tìm thấy kết quả đâu.**")
                 else:
                     songname = search[0]
                     url = search[1]
@@ -149,7 +149,7 @@ async def vplay(client, m: Message):
                             await loser.delete()
                             await m.reply_photo(
                                 photo=f"{IMG_1}",
-                                caption=f"💡 **Track added to the queue**\n\n🏷 **Name:** [{songname}]({url})\n💭 **Chat:** `{chat_id}`\n🎧 **Request by:** {m.from_user.mention()}\n🔢 **At position »** `{pos}`",
+                                caption=f"💡 **Đã được xếp vào hàng chờ**\n\n🏷 **Tên Bài:** [{songname}]({url})\n💭 **Nhóm Chat:** `{chat_id}`\n🎧 **Bật bởi Người đáng yêu tên:** {m.from_user.mention()}\n🔢 **Vị trí »** `{pos}`",
                                 reply_markup=keyboard,
                             )
                         else:
