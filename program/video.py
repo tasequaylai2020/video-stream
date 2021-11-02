@@ -119,7 +119,7 @@ async def vplay(client, m: Message):
                 await loser.delete()
                 await m.reply_photo(
                     photo=f"{IMG_2}",
-                    caption=f"💡 **video streaming started.**\n\n🏷 **Name:** [{songname}]({link})\n💭 **Chat:** `{chat_id}`\n💡 **Status:** `Playing`\n🎧 **Request by:** {m.from_user.mention()}",
+                    caption=f"💡 **Đang chạy rồi kìa! Lên Voice Chat coi đi!**\n\n🏷 **Tên Bài:** [{songname}]({link})\n💭 **Nhóm chat:** `{chat_id}`\n💡 **Trạng Thái:** `Chạy rồi lên coi đi!`\n🎧 **Bật Bởi Bạn Đáng Yêu Tên:** {m.from_user.mention()}",
                     reply_markup=keyboard,
                 )
         else:
